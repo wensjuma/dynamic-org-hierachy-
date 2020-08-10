@@ -1,0 +1,7 @@
+<!-- https://alligator.io/angular/viewchild-access-component/ -->
+<div style="background-color: #5a137c;" class="container-fluid">
+    <div class="organizationchart">
+        <app-addchart (empdetails)="getempdetails($event)"></app-addchart>
+        <app-viewchart [empArr]="empArr"></app-viewchart>
+    </div>
+</div>

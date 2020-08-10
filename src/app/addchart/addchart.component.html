@@ -1,0 +1,26 @@
+<div class="col-md-12  addbox">
+  <form [formGroup]="addFormGroup" (ngSubmit)="addForm()">
+    <div class="row clearfix">
+      <div class="col-3 form-group">
+        <label for="firstName">Name</label>
+        <input type="text" formControlName="name" class="form-control" aria-required="true" />
+      </div>
+      <div class="col-3 form-group">
+        <label for="middleName">Designation</label>
+        <select class="form-control" formControlName="desg" (change)="checksupervisors($event.target.value)">
+          <option *ngFor="let org of orgaArr" value="{{org.designation_id}}">{{org.designation_name}}</option>
+        </select>
+      </div>
+      <div class="col-3 form-group">
+        <label for="middleName">Supervisor</label>
+        <select class="form-control" formControlName="supervisor">
+          <option *ngFor="let emp of employees; let i = index;" [value]="emp.empid">{{emp.empname}}</option>
+        </select>
+      </div>
+      <div class="col-3 form-group text-center">
+        <br>
+        <button class="btn btn-primary" type="submit" role="button">Add Downline</button>
+      </div>
+    </div>
+  </form>
+</div>
